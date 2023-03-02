@@ -1,4 +1,4 @@
-# Electron-Configuration
+# Chemistry-Assistant
 
 This is my attempt to make a python program which compiles and intertwines many developers' code to make the world of chemistry easier :)
 
