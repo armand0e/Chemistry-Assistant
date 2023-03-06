@@ -4,6 +4,13 @@ from periodictable import Element
 from periodictable import Category
 from periodictable import Phase
 
+def get_super(x):
+    normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()"
+    super_s = "ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻᵃᵇᶜᵈᵉᶠᵍʰᶦʲᵏˡᵐⁿᵒᵖ۹ʳˢᵗᵘᵛʷˣʸᶻ⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾"
+    res = x.maketrans(''.join(normal), ''.join(super_s))
+    return x.translate(res)
+  
+
 AtmDict = {
     'H':1,       'He':2,      'Li':3,      'Be':4,      'B':5,       'C':6,
     'N':7,       'O':8,       'F':9,       'Ne':10,     'Na':11,     'Mg':12,     'Al':13,     'Si':14,\
@@ -284,16 +291,18 @@ while programrun:
         global charge
         # a lot of long lists with each individual electron, element symbol, and name. There should be a way to condense and
         # these lists
-        electronList = ["1s^1", "1s^2", "2s^1", "2s^2", "2p^1", "2p^2", "2p^3", "2p^4", "2p^5", "2p^6", "3s^1", "3s^2",
-                        "3p^1", "3p^2", "3p^3", "3p^4", "3p^5", "3p^6", "4s^1", "4s^2", "3d^1", "3d^2", "3d^3", "3d^4",
-                        "3d^5", "3d^6", "3d^7", "3d^8", "3d^9", "3d^10", "4p^1", "4p^2", "4p^3", "4p^4", "4p^5", "4p^6",
-                        "5s^1", "5s^2", "4d^1", "4d^2", "4d^3", "4d^4", "4d^5", "4d^6", "4d^7", "4d^8", "4d^9", "4d^10",
-                        "5p^1", "5p^2", "5p^3", "5p^4", "5p^5", "5p^6", "6s^1", "6s^2", "4f^1", "4f^2", "4f^3", "4f^4",
-                        "4f^5", "4f^6", "4f^7", "4f^8", "4f^9", "4f^10", "4f^11", "4f^12", "4f^13", "4f^14", "5d^1", "5d^2",
-                        "5d^3", "5d^4", "5d^5", "5d^6","5d^7", "5d^8", "5d^9", "5d^10", "6p^1", "6p^2", "6p^3", "6p^4", "6p^5",
-                        "6p^6", "7s^1", "7s^2","5f^1", "5f^2", "5f^3", "5f^4", "5f^5", "5f^6", "5f^7", "5f^8", "5f^9", "5f^10",
-                        "5f^11", "5f^12", "5f^13", "5f^14", "6d^1", "6d^2", "6d^3", "6d^4", "6d^5", "6d^6", "6d^7", "6d^8",
-                        "6d^9", "6d^10", "7p^1", "7p^2", "7p^3", "7p^4", "7p^5","7p^6"]
+        electronList = [
+            "1s" +get_super("1"), "1s" +get_super("2"), "2s" +get_super("1"), "2s" +get_super("2"), "2p" +get_super("1"), "2p" +get_super("2"), "2p" +get_super("3"), "2p" +get_super("4"), "2p" +get_super("5"), "2p" +get_super("6"), "3s" +get_super("1"), "3s" +get_super("2"),
+            "3p" +get_super("1"), "3p" +get_super("2"), "3p" +get_super("3"), "3p" +get_super("4"), "3p" +get_super("5"), "3p" +get_super("6"), "4s" +get_super("1"), "4s" +get_super("2"), "3d" +get_super("1"), "3d" +get_super("2"), "3d" +get_super("3"), "3d" +get_super("4"),
+            "3d" +get_super("5"), "3d" +get_super("6"), "3d" +get_super("7"), "3d" +get_super("8"), "3d" +get_super("9"), "3d" +get_super("10"), "4p" +get_super("1"), "4p" +get_super("2"), "4p" +get_super("3"), "4p" +get_super("4"), "4p" +get_super("5"), "4p" +get_super("6"),
+            "5s" +get_super("1"), "5s" +get_super("2"), "4d" +get_super("1"), "4d" +get_super("2"), "4d" +get_super("3"), "4d" +get_super("4"), "4d" +get_super("5"), "4d" +get_super("6"), "4d" +get_super("7"), "4d" +get_super("8"), "4d" +get_super("9"), "4d" +get_super("10"),
+            "5p" +get_super("1"), "5p" +get_super("2"), "5p" +get_super("3"), "5p" +get_super("4"), "5p" +get_super("5"), "5p" +get_super("6"), "6s" +get_super("1"), "6s" +get_super("2"), "4f" +get_super("1"), "4f" +get_super("2"), "4f" +get_super("3"), "4f" +get_super("4"),
+            "4f" +get_super("5"), "4f" +get_super("6"), "4f" +get_super("7"), "4f" +get_super("8"), "4f" +get_super("9"), "4f" +get_super("10"), "4f" +get_super("11"), "4f" +get_super("12"), "4f" +get_super("13"), "4f" +get_super("14"), "5d" +get_super("1"), "5d" +get_super("2"),
+            "5d" +get_super("3"), "5d" +get_super("4"), "5d" +get_super("5"), "5d" +get_super("6"),"5d" +get_super("7"), "5d" +get_super("8"), "5d" +get_super("9"), "5d" +get_super("10"), "6p" +get_super("1"), "6p" +get_super("2"), "6p" +get_super("3"), "6p" +get_super("4"), "6p" +get_super("5"),
+            "6p" +get_super("6"), "7s" +get_super("1"), "7s" +get_super("2"),"5f" +get_super("1"), "5f" +get_super("2"), "5f" +get_super("3"), "5f" +get_super("4"), "5f" +get_super("5"), "5f" +get_super("6"), "5f" +get_super("7"), "5f" +get_super("8"), "5f" +get_super("9"), "5f" +get_super("10"),
+            "5f" +get_super("11"), "5f" +get_super("12"), "5f" +get_super("13"), "5f" +get_super("14"), "6d" +get_super("1"), "6d" +get_super("2"), "6d" +get_super("3"), "6d" +get_super("4"), "6d" +get_super("5"), "6d" +get_super("6"), "6d" +get_super("7"), "6d" +get_super("8"),
+            "6d" +get_super("9"), "6d" +get_super("10"), "7p" +get_super("1"), "7p" +get_super("2"), "7p" +get_super("3"), "7p" +get_super("4"), "7p" +get_super("5"),"7p" +get_super("6")
+                    ]
         elementsAb = ["H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K",
                     "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br", "Kr", "Rb",
                     "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I", "Xe", "Cs",
@@ -414,3 +423,6 @@ while programrun:
         print('Thanks, have a great day!')
         programrun = False
         break
+
+
+
