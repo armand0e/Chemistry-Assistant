@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import periodictable
 from periodictable import Element
 from periodictable import Category
